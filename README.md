@@ -18,7 +18,7 @@ _A project to utilize the C# language and the .NET Core framework. The project e
 
 ## Known Bugs
 
-There are no known bugs at the time of this update.
+Known problems with linking pastry and bread checkouts to program.cs.
  
 ## Support and contact details
 
