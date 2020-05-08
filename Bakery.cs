@@ -8,9 +8,9 @@ namespace Bakery.Menu
     public int BreadTotal { get; set; }
     // private Dictionary<int, Action> BreadMenu { get; set; }
 
-    public Bread()
+    public Bread(int breadTotal)
     {
-      BreadTotal = 0;
+      BreadTotal = breadTotal;
       // BreadMenu = new Dictionary<int, Action>() { {1, () => BaguettePrice()}, {2, () => CroissantPrice()} };
     }
 
@@ -40,7 +40,7 @@ Please select number 1 or 2 then hit ENTER:");
         int bagAmount = int.Parse(Console.ReadLine());
         
         BagTally(bagAmount);
-        // CheckOut();
+        CheckOut();
       }
       // else if (item == 2)
       // {
@@ -77,32 +77,32 @@ Please select number 1 or 2 then hit ENTER:");
     //   return BreadTotal; 
     // }
 
-    // public static void CheckOut()
-    // {
-    //   Console.WriteLine("Would you like to checkout? Y/N");
-    //   string check = (Console.ReadLine().ToUpper());
+    public static void CheckOut()
+    {;
+      Console.WriteLine("Would you like to checkout? Y/N");
+      string check = (Console.ReadLine().ToUpper());
       
-    //   if(check == "N")
-    //   {
-    //     StartMenu();
-    //   }
-    //   else
-    //   {
-    //     BagTally();
+      if(check == "N")
+      {
+        StartMenu();
+      }
+      else
+      {
+        // BagTally();
+        // breadTotal = bread.bagPrice;
 
-    //   int TotalPrice = bagPrice;
-    //   Console.WriteLine("You're total today is $" + TotalPrice + " today");
-    //   Console.WriteLine(@"
-    //             (
-    //               )
-    //         __..---..__
-    //     ,-='  /  |  \  `=-.
-    //    :--..____________..--;
-    //     \.,______________,./");
-    //   Console.WriteLine("       Have a nice day!");
-    //   Environment.Exit(0);
-    //   }
-    // } 
+        Console.WriteLine("You're total today is $" + 0 + " today");
+        Console.WriteLine(@"
+                  (
+                    )
+              __..---..__
+          ,-='  /  |  \  `=-.
+         :--..___________..--;
+          \.,_____________,./");
+        Console.WriteLine("            Have a nice day!");
+        Environment.Exit(0);
+        }
+    } 
 
     public static void StartMenu()
     {
