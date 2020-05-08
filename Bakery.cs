@@ -39,8 +39,8 @@ Please select number 1 or 2 then hit ENTER:");
         Console.WriteLine("How many Baguettes would you like?");
         int bagAmount = int.Parse(Console.ReadLine());
         
-        BagTally(bagAmount);
-        CheckOut();
+        int bagTally = BagAdd(bagAmount);
+        CheckOut(bagTally);
       }
       // else if (item == 2)
       // {
@@ -52,11 +52,11 @@ Please select number 1 or 2 then hit ENTER:");
       }
     }  
 
-    private static int BagTally(int bagAmount)
+    private static int BagAdd(int input)
     {
-      int discount = bagAmount / 3;
-      int bagPrice = (bagAmount - discount)* 5;
-      // Console.WriteLine(bagPrice);
+      int discount = input / 3;
+      int bagPrice = (input - discount)* 5;
+      Console.WriteLine(bagPrice);
       return bagPrice;
     }
 
@@ -77,8 +77,9 @@ Please select number 1 or 2 then hit ENTER:");
     //   return BreadTotal; 
     // }
 
-    public static void CheckOut()
-    {;
+    public static void CheckOut(int breadTotal)
+    {
+      int outPut = breadTotal;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
@@ -88,10 +89,7 @@ Please select number 1 or 2 then hit ENTER:");
       }
       else
       {
-        // BagTally();
-        // breadTotal = bread.bagPrice;
-
-        Console.WriteLine("You're total today is $" + 0 + " today");
+        Console.WriteLine("You're total today is $" + outPut + " today");
         Console.WriteLine(@"
                   (
                     )
@@ -100,6 +98,7 @@ Please select number 1 or 2 then hit ENTER:");
          :--..___________..--;
           \.,_____________,./");
         Console.WriteLine("            Have a nice day!");
+
         Environment.Exit(0);
         }
     } 
