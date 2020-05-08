@@ -41,7 +41,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 | **User can get total order cost** | User Input:”checkout" | Output: “total order cost.” |
 
 ### Resources
-* [ASCII art](https://www.asciiart.eu/plants)
+* [ASCII art](https://www.asciiart.eu/food-and-drinks/other)
 * [Text to font art](http://patorjk.com/software/taag/)
 
 ### License

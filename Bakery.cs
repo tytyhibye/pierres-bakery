@@ -8,6 +8,8 @@ namespace Bakery.Menu
     public int BagPrice { get; set; }
     public int CrosPrice { get; set; }
     public int BreadTotal { get; set; }
+    public int PastryTotal { get; set; }
+    public int TotalPrice { get; set; }
     // private Dictionary<int, Action> BreadMenu { get; set; }
 
     public Bread()
@@ -15,6 +17,8 @@ namespace Bakery.Menu
       BagPrice = 0;
       CrosPrice = 0;
       BreadTotal = 0;
+      PastryTotal = 0;
+      TotalPrice = BreadTotal + PastryTotal;
       // BreadMenu = new Dictionary<int, Action>() { {1, () => BaguettePrice()}, {2, () => CroissantPrice()} };
     }
 
@@ -73,7 +77,7 @@ namespace Bakery.Menu
         }
         else
         {
-          Environment.Exit(0);
+          CheckOut();
         }
       }
       else if (item == 2)
@@ -93,14 +97,21 @@ namespace Bakery.Menu
         }
         else
         {
-          Environment.Exit(0);
+          CheckOut();
         }
       }
       else
       {
-        Environment.Exit(0);
+        StartMenu();
       }
-    }   
+    }  
+
+    public static void CheckOut()
+    {
+      Bread bread = new Bread();
+      int TotalPrice = bread.BagPrice + bread.CrosPrice;
+      Console.WriteLine("You're total today is $" + TotalPrice + " today.");
+    } 
   }
 
 
