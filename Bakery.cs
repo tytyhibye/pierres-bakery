@@ -92,11 +92,17 @@ namespace Bakery.Menu
     public void CheckOut(int BreadTotal)
     {
       // Bread bread = new Bread();
-      BreadTally(int bagPrice);
+      BreadTally(bagPrice);
       int TotalPrice = BreadTotal;
-      Console.WriteLine(@"You're total today is $" + TotalPrice + " today"
-      
-      "Have a nice day!");
+      Console.WriteLine("You're total today is $" + TotalPrice + " today");
+      Console.WriteLine(@"
+                (
+                  )
+            __..---..__
+        ,-='  /  |  \  `=-.
+       :--..____________..--;
+        \.,______________,./");
+ Console.WriteLine("       Have a nice day!")
       Environment.Exit(0);
     } 
 
