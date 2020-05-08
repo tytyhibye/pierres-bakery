@@ -14,7 +14,7 @@ namespace Bakery.Menu
       // BreadMenu = new Dictionary<int, Action>() { {1, () => BaguettePrice()}, {2, () => CroissantPrice()} };
     }
 
-    public void BMenu()
+    public static void BMenu()
     {
       Console.WriteLine(@"
 ██████╗ ██████╗ ███████╗ █████╗ ██████╗ 
@@ -29,15 +29,18 @@ namespace Bakery.Menu
       
       Console.WriteLine(@"
       1. Baguette($5)        2. Croissant($5)
-      3. Sourdough Roll($5)  4. Rosemary Potato Roll($5)
       
-      Please input a number between 1 - 4 then hit ENTER:");
+Please select number 1 or 2 then hit ENTER:");
 
       int item = int.Parse(Console.ReadLine());
       // BreadMenu[item].invoke();
       if( item == 1)
       {
-        BagTally();
+        Console.WriteLine("How many Baguettes would you like?");
+        int bagAmount = int.Parse(Console.ReadLine());
+        
+        BagTally(bagAmount);
+        // CheckOut();
       }
       // else if (item == 2)
       // {
@@ -47,28 +50,13 @@ namespace Bakery.Menu
       {
         StartMenu();
       }
-      Console.WriteLine("Would you like to checkout? Y/N");
-      string check = (Console.ReadLine().ToUpper());
-      
-      if(check == "N")
-      {
-        StartMenu();
-      }
-      else
-      {
-        CheckOut();
-      }
     }  
 
-    private static int BagTally()
+    private static int BagTally(int bagAmount)
     {
-      Console.WriteLine("How many Baguettes would you like?");
-      
-      int bagAmount = int.Parse(Console.ReadLine());
       int discount = bagAmount / 3;
       int bagPrice = (bagAmount - discount)* 5;
-      Console.WriteLine("You've ordered $" + bagPrice + " worth of Baguettes.");
-      
+      // Console.WriteLine(bagPrice);
       return bagPrice;
     }
 
@@ -83,28 +71,38 @@ namespace Bakery.Menu
     //   return croisPrice;
     // }
 
-    public int BreadTally(int bagPrice)
-    {
-      BreadTotal += bagPrice;
-      return BreadTotal; 
-    }
+    // public int BreadTally(int bagPrice)
+    // {
+    //   BreadTotal += bagPrice;
+    //   return BreadTotal; 
+    // }
 
-    public void CheckOut(int BreadTotal)
-    {
-      // Bread bread = new Bread();
-      BreadTally(bagPrice);
-      int TotalPrice = BreadTotal;
-      Console.WriteLine("You're total today is $" + TotalPrice + " today");
-      Console.WriteLine(@"
-                (
-                  )
-            __..---..__
-        ,-='  /  |  \  `=-.
-       :--..____________..--;
-        \.,______________,./");
- Console.WriteLine("       Have a nice day!")
-      Environment.Exit(0);
-    } 
+    // public static void CheckOut()
+    // {
+    //   Console.WriteLine("Would you like to checkout? Y/N");
+    //   string check = (Console.ReadLine().ToUpper());
+      
+    //   if(check == "N")
+    //   {
+    //     StartMenu();
+    //   }
+    //   else
+    //   {
+    //     BagTally();
+
+    //   int TotalPrice = bagPrice;
+    //   Console.WriteLine("You're total today is $" + TotalPrice + " today");
+    //   Console.WriteLine(@"
+    //             (
+    //               )
+    //         __..---..__
+    //     ,-='  /  |  \  `=-.
+    //    :--..____________..--;
+    //     \.,______________,./");
+    //   Console.WriteLine("       Have a nice day!");
+    //   Environment.Exit(0);
+    //   }
+    // } 
 
     public static void StartMenu()
     {
