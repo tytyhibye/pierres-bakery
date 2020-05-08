@@ -1,17 +1,15 @@
 using System;
-using System.Collections.Generic;
 
-namespace Bakery.Menu
+
+namespace Bakery.BreadMenu
 {
   class Bread
   {
     public int BreadTotal { get; set; }
-    // private Dictionary<int, Action> BreadMenu { get; set; }
 
     public Bread(int breadTotal)
     {
       BreadTotal = breadTotal;
-      // BreadMenu = new Dictionary<int, Action>() { {1, () => BaguettePrice()}, {2, () => CroissantPrice()} };
     }
 
     public static void BMenu()
@@ -23,17 +21,23 @@ namespace Bakery.Menu
 ██╔══██╗██╔══██╗██╔══╝  ██╔══██║██║  ██║
 ██████╔╝██║  ██║███████╗██║  ██║██████╔╝
 ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝
+                                          
+ ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
+ ████╗ ████║██╔════╝████╗  ██║██║   ██║
+ ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║
+ ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║
+ ██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝
+ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ 
                                                   
          Today's Special:
          Buy 2 get 1 FREE");
       
       Console.WriteLine(@"
-      1. Baguette($5)        2. Croissant($5)
+      1. Baguette($5)        2. Croissant($4)
       
 Please select number 1 or 2 then hit ENTER:");
 
       int item = int.Parse(Console.ReadLine());
-      // BreadMenu[item].invoke();
       if( item == 1)
       {
         Console.WriteLine("How many Baguettes would you like?");
@@ -44,7 +48,11 @@ Please select number 1 or 2 then hit ENTER:");
       }
       // else if (item == 2)
       // {
-      //   CroisTally();
+      //   Console.WriteLine("How many Croissants would you like?");
+      //   int croisAmount = int.Parse(Console.ReadLine());
+        
+      //   int croisTally = CroisAdd(croisAmount);
+      //   CheckOut(croisTally);
       // }
       else
       {
@@ -56,30 +64,22 @@ Please select number 1 or 2 then hit ENTER:");
     {
       int discount = input / 3;
       int bagPrice = (input - discount)* 5;
-      Console.WriteLine(bagPrice);
+      // Console.WriteLine(bagPrice);
       return bagPrice;
     }
 
-    // private int CroisTally()
+    // private static int CroisAdd(int input)
     // {
-    //   Console.WriteLine("How many Croissants would you like?");
-      
-    //   int croisAmount = int.Parse(Console.ReadLine());
-    //   int discount = croisAmount / 3;
-    //   int croisPrice = (croisAmount - discount)* 5;
-    //   Console.WriteLine("You've ordered $" + croisPrice + " worth of Croissants.");
+    //   int discount = input / 3;
+    //   int croisPrice = (input - discount)* 4;
+    //   Console.WriteLine(croisPrice);
     //   return croisPrice;
-    // }
-
-    // public int BreadTally(int bagPrice)
-    // {
-    //   BreadTotal += bagPrice;
-    //   return BreadTotal; 
     // }
 
     public static void CheckOut(int breadTotal)
     {
-      int outPut = breadTotal;
+      Pastry pastry = new Pastry();
+      int outPut = breadTotal + pastryTotal;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
@@ -96,36 +96,13 @@ Please select number 1 or 2 then hit ENTER:");
               __..---..__
           ,-='  /  |  \  `=-.
          :--..___________..--;
-          \.,_____________,./");
-        Console.WriteLine("            Have a nice day!");
+          \.,_____________,./
+           Have a nice day!");
 
         Environment.Exit(0);
         }
     } 
 
-    public static void StartMenu()
-    {
-      Console.WriteLine("            Menu Options:");
-      Console.WriteLine("   'B' for Bread |  'P' for Pastries");
-      string menuType = (Console.ReadLine().ToUpper());
 
-      if( menuType == "B")
-      {
-        BMenu();
-      }
-      else
-      {
-        Environment.Exit(0);
-      }
-    }
   }
-
-  // class Pastry
-  // {
-  //   public string PastryType { get; set; }
-  //   public int PastryAmount { get; set; }
-  //   public int PastryPrice { get; set; }
-  //   private Dictionary<int, Action> PastryMenu { get; set; }
-  // }
-
 }
