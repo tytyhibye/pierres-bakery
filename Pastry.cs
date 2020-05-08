@@ -1,3 +1,4 @@
+using Bakery;
 using System;
 
 namespace Bakery.PastryMenu
@@ -47,7 +48,7 @@ namespace Bakery.PastryMenu
       }
       else
         {
-          StartMenu();
+          Bakery.StartMenu();
         }
       }  
       
@@ -57,6 +58,21 @@ namespace Bakery.PastryMenu
         int puffPrice = (input - discount)* 5;
         Console.WriteLine(puffPrice);
         return puffPrice;
-      }                                                          
+      } 
+      public static void PuffCheckOut(int puffTotal)
+    {
+      int puffOutPut = pastryTotal;
+      Console.WriteLine("Would you like to checkout? Y/N");
+      string check = (Console.ReadLine().ToUpper());
+      
+      if(check == "N")
+      {
+        Bakery.StartMenu();
+      }
+      else
+      {
+        Bakery.CheckOut();
+      }
+    }                                                          
     }
 }

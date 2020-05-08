@@ -26,7 +26,7 @@ namespace Bakery
       
       ");
 
-      Bread.StartMenu();
+      StartMenu();
     }
       public static void StartMenu()
     {
@@ -36,16 +36,31 @@ namespace Bakery
 
       if( menuType == "B")
       {
-        BMenu();
+        Bread.BMenu();
       }
       else if( menuType == "P")
       {
-        PMenu();
+        Pastry.PMenu();
       }
       else
       {
         Environment.Exit(0);
       }
     }
+    
+    public static void CheckOut()
+    {
+      Console.WriteLine("You're total today is $" + outPut + " today");
+      Console.WriteLine(@"
+                (
+                  )
+            __..---..__
+        ,-='  /  |  \  `=-.
+       :--..____________..--;
+        \.,_____________,./
+          Have a nice day!");
+
+      Environment.Exit(0);
+      }
   }
 }

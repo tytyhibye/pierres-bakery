@@ -1,3 +1,4 @@
+using Bakery;
 using System;
 
 
@@ -44,7 +45,7 @@ Please select number 1 or 2 then hit ENTER:");
         int bagAmount = int.Parse(Console.ReadLine());
         
         int bagTally = BagAdd(bagAmount);
-        CheckOut(bagTally);
+        BreadCheckOut(bagTally);
       }
       // else if (item == 2)
       // {
@@ -56,7 +57,7 @@ Please select number 1 or 2 then hit ENTER:");
       // }
       else
       {
-        StartMenu();
+        Bakery.StartMenu();
       }
     }  
 
@@ -76,33 +77,20 @@ Please select number 1 or 2 then hit ENTER:");
     //   return croisPrice;
     // }
 
-    public static void CheckOut(int breadTotal)
+    public static void BreadCheckOut(int breadTotal)
     {
-      Pastry pastry = new Pastry();
-      int outPut = breadTotal + pastryTotal;
+      int breadOutPut = breadTotal;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
       if(check == "N")
       {
-        StartMenu();
+        Bakery.StartMenu();
       }
       else
       {
-        Console.WriteLine("You're total today is $" + outPut + " today");
-        Console.WriteLine(@"
-                  (
-                    )
-              __..---..__
-          ,-='  /  |  \  `=-.
-         :--..___________..--;
-          \.,_____________,./
-           Have a nice day!");
-
-        Environment.Exit(0);
-        }
+        Bakery.CheckOut();  
+      }
     } 
-
-
   }
 }
