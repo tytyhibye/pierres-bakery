@@ -1,3 +1,4 @@
+using Bakery.PastryMenu;
 using Bakery.Program;
 using System;
 
@@ -45,7 +46,7 @@ Please select number 1 or 2 then hit ENTER:");
         int bagAmount = int.Parse(Console.ReadLine());
         
         int bagTally = BagAdd(bagAmount);
-        BreadCheckOut(bagTally);
+        int breadTotal = BreadCheckout(bagTally);
       }
       // else if (item == 2)
       // {
@@ -77,9 +78,10 @@ Please select number 1 or 2 then hit ENTER:");
     //   return croisPrice;
     // }
 
-    public static void BreadCheckOut(int breadTotal)
+    public static void BreadCheckOut(int breadPrice)
     {
-      int breadOutPut = breadTotal;
+      int breadOutPut = breadPrice;
+      Console.WriteLine(breadPrice);
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       

@@ -1,9 +1,9 @@
+using Bakery.BreadMenu;
 using Bakery.Program;
 using System;
 
 namespace Bakery.PastryMenu
 {
-
   class Pastry
     {
       public int PastryTotal { get; set; }
@@ -44,7 +44,7 @@ namespace Bakery.PastryMenu
         int puffAmount = int.Parse(Console.ReadLine());
         
         int puffTally = PuffAdd(puffAmount);
-        PuffCheckOut(puffTally);
+        int pastryTotal = PuffCheckout(puffTally);
       }
       else
         {
@@ -59,9 +59,10 @@ namespace Bakery.PastryMenu
         Console.WriteLine(puffPrice);
         return puffPrice;
       } 
-      public static void PuffCheckOut(int puffTotal)
+      public static void PuffCheckOut(int pastryPrice)
     {
-      int puffOutPut = pastryTotal;
+      int puffOutPut = pastryPrice;
+      Console.WriteLine(pastryPrice);
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       

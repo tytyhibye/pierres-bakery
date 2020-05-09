@@ -48,8 +48,9 @@ namespace Bakery.Program
       }
     }
     
-    public static void CheckOut()
+    public static void CheckOut(int breadTotal, int pastryTotal)
     {
+      int outPut = breadTotal + pastryTotal;
       Console.WriteLine("You're total today is $" + outPut + " today");
       Console.WriteLine(@"
                 (
