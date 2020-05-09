@@ -1,4 +1,4 @@
-using Bakery;
+using Bakery.Program;
 using System;
 
 
@@ -87,10 +87,10 @@ Please select number 1 or 2 then hit ENTER:");
       {
         Bakery.StartMenu();
       }
-      else
+     else
       {
-        Bakery.CheckOut();  
+        Bakery.CheckOut();
       }
-    } 
+    }                                                          
   }
 }

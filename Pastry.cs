@@ -1,4 +1,4 @@
-using Bakery;
+using Bakery.Program;
 using System;
 
 namespace Bakery.PastryMenu
@@ -44,7 +44,7 @@ namespace Bakery.PastryMenu
         int puffAmount = int.Parse(Console.ReadLine());
         
         int puffTally = PuffAdd(puffAmount);
-        CheckOut(puffTally);
+        PuffCheckOut(puffTally);
       }
       else
         {
@@ -74,5 +74,5 @@ namespace Bakery.PastryMenu
         Bakery.CheckOut();
       }
     }                                                          
-    }
+  }
 }

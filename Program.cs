@@ -2,7 +2,7 @@ using Bakery.BreadMenu;
 using Bakery.PastryMenu;
 using System;
 
-namespace Bakery
+namespace Bakery.Program
 {
   class Program
   {
