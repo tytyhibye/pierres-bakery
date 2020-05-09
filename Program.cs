@@ -51,7 +51,16 @@ namespace Bakery.Program
     public static void CheckOut(int breadTotal, int pastryTotal)
     {
       int outPut = breadTotal + pastryTotal;
-      Console.WriteLine("You're total today is $" + outPut + " today");
+      Console.WriteLine("Would you like to checkout? Y/N");
+      string check = (Console.ReadLine().ToUpper());
+      
+      if(check == "N")
+      {
+        StartMenu();
+      }
+      else
+      {
+      Console.WriteLine("You're total today is $" + outPut);
       Console.WriteLine(@"
                 (
                   )

@@ -33,47 +33,45 @@ namespace Bakery.PastryMenu
           Today's Special:
       Buy 1 for $2 or 3 for $5");
       
-      Console.WriteLine(@"
+        Console.WriteLine(@"
         1. Creampuff($2)        2. Cupcake ($2)
         
   Please select number 1 or 2 then hit ENTER:");
-      int item = int.Parse(Console.ReadLine());
-      if( item == 1)
-      {
-        Console.WriteLine("How many Creampuffs would you like?");
-        int puffAmount = int.Parse(Console.ReadLine());
-        
-        int puffTally = PuffAdd(puffAmount);
-        int pastryTotal = PuffCheckout(puffTally);
-      }
-      else
+        int item = int.Parse(Console.ReadLine());
+        if( item == 1)
+        {
+          Console.WriteLine("How many Creampuffs would you like?");
+          int puffAmount = int.Parse(Console.ReadLine());
+          int puffPrice = PuffAdd(puffAmount);
+          int pastryTotal = PuffCheckout(puffPrice);
+          Program.CheckOut();
+        }
+        else
         {
           Bakery.StartMenu();
         }
       }  
       
-      private static int PuffAdd(int input)
+      private static int PuffAdd(int i)
       {
-        int discount = input / 3;
-        int puffPrice = (input - discount)* 5;
-        Console.WriteLine(puffPrice);
+        for (int i = 2; i <= puffAmount; i++)
+        {
+          if(i % 6 == 0)
+          {
+            i -= 1;
+          }
+          else
+          {
+          int puffPrice = i;
+          }
+        }
         return puffPrice;
       } 
-      public static void PuffCheckOut(int pastryPrice)
-    {
-      int puffOutPut = pastryPrice;
-      Console.WriteLine(pastryPrice);
-      Console.WriteLine("Would you like to checkout? Y/N");
-      string check = (Console.ReadLine().ToUpper());
-      
-      if(check == "N")
+      public static int PastryCheckOut(int pastryPrice)
       {
-        Bakery.StartMenu();
-      }
-      else
-      {
-        Bakery.CheckOut();
-      }
+        int pastryTotal = pastryPrice;
+        Console.WriteLine(pastryTotal);
+        return pastryTotal;
     }                                                          
   }
 }

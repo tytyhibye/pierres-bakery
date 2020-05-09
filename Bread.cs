@@ -45,17 +45,10 @@ Please select number 1 or 2 then hit ENTER:");
         Console.WriteLine("How many Baguettes would you like?");
         int bagAmount = int.Parse(Console.ReadLine());
         
-        int bagTally = BagAdd(bagAmount);
+        int bagPrice = BagAdd(bagAmount);
         int breadTotal = BreadCheckout(bagTally);
+        Program.CheckOut();
       }
-      // else if (item == 2)
-      // {
-      //   Console.WriteLine("How many Croissants would you like?");
-      //   int croisAmount = int.Parse(Console.ReadLine());
-        
-      //   int croisTally = CroisAdd(croisAmount);
-      //   CheckOut(croisTally);
-      // }
       else
       {
         Bakery.StartMenu();
@@ -70,29 +63,11 @@ Please select number 1 or 2 then hit ENTER:");
       return bagPrice;
     }
 
-    // private static int CroisAdd(int input)
-    // {
-    //   int discount = input / 3;
-    //   int croisPrice = (input - discount)* 4;
-    //   Console.WriteLine(croisPrice);
-    //   return croisPrice;
-    // }
-
     public static void BreadCheckOut(int breadPrice)
     {
-      int breadOutPut = breadPrice;
-      Console.WriteLine(breadPrice);
-      Console.WriteLine("Would you like to checkout? Y/N");
-      string check = (Console.ReadLine().ToUpper());
-      
-      if(check == "N")
-      {
-        Bakery.StartMenu();
-      }
-     else
-      {
-        Bakery.CheckOut();
-      }
+      int breadTotal = breadPrice;
+      Console.WriteLine(breadTotal);
+      return breadTotal;
     }                                                          
   }
 }
