@@ -2,10 +2,11 @@ using Bakery.BreadMenu;
 // using Bakery.PastryMenu;
 using System;
 
-namespace Bakery.Program
+namespace Bakery.ProgramMenu
 {
   class Program
   {
+    // StartMenu();
     static void Main()
     {
       Console.WriteLine(@"
@@ -48,9 +49,9 @@ namespace Bakery.Program
       }
     }
     
-    public static void CheckOut(int breadTotal)
+    public static void CheckOut(int bagPrice)
     {
-      int outPut = breadTotal;
+      int outPut = bagPrice;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       

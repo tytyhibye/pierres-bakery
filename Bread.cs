@@ -1,5 +1,5 @@
 // using Bakery.PastryMenu;
-using Bakery.Program;
+using Bakery.ProgramMenu;
 using System;
 
 
@@ -40,19 +40,19 @@ namespace Bakery.BreadMenu
 Please select number 1 or 2 then hit ENTER:");
 
       int item = int.Parse(Console.ReadLine());
-      if( item == 1)
+      if(item == 1)
       {
         Console.WriteLine("How many Baguettes would you like?");
         int bagAmount = int.Parse(Console.ReadLine());
         
         int bagPrice = BagAdd(bagAmount);
-        int breadTotal = BreadCheckout(bagPrice);
+        // int breadTotal = BreadCheckout(bagPrice);
         // int breadOutput = Program.CheckOut(breadTotal);
-        Program.CheckOut(breadTotal);
+        Program.CheckOut(bagPrice);
       }
       else
       {
-        Bakery.StartMenu();
+        Environment.Exit(0);
       }
     }  
 
@@ -64,11 +64,10 @@ Please select number 1 or 2 then hit ENTER:");
       return bagPrice;
     }
 
-    private static int BreadCheckOut(int breadPrice)
-    {
-      int breadTotal = breadPrice;
-      Console.WriteLine(breadTotal);
-      return breadTotal;
+    // public static int BreadCheckOut(int breadPrice)
+    // {
+    //   int breadTotal = breadPrice;
+    //   Console.WriteLine(breadTotal);
+    //   return breadTotal;
     }                                                          
   }
-}
