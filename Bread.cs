@@ -1,4 +1,4 @@
-using Bakery.PastryMenu;
+// using Bakery.PastryMenu;
 using Bakery.Program;
 using System;
 
@@ -46,8 +46,8 @@ Please select number 1 or 2 then hit ENTER:");
         int bagAmount = int.Parse(Console.ReadLine());
         
         int bagPrice = BagAdd(bagAmount);
-        int breadTotal = BreadCheckout(bagTally);
-        Program.CheckOut();
+        int breadTotal = BreadCheckout(bagPrice);
+        int breadOutput = Program.CheckOut(breadTotal);
       }
       else
       {
@@ -63,7 +63,7 @@ Please select number 1 or 2 then hit ENTER:");
       return bagPrice;
     }
 
-    public static void BreadCheckOut(int breadPrice)
+    private static int BreadCheckOut(int breadPrice)
     {
       int breadTotal = breadPrice;
       Console.WriteLine(breadTotal);
