@@ -1,5 +1,5 @@
-using Bakery.BreadMenu;
-// using Bakery.PastryMenu;
+// using Bakery.BreadMenu;
+using Bakery.PastryMenu;
 using System;
 
 namespace Bakery.ProgramMenu
@@ -35,23 +35,23 @@ namespace Bakery.ProgramMenu
       Console.WriteLine("   'B' for Bread |  'P' for Pastries");
       string menuType = (Console.ReadLine().ToUpper());
 
-      if( menuType == "B")
-      {
-        Bread.BMenu();
-      }
-      // else if( menuType == "P")
+      // if( menuType == "B")
       // {
-      //   Pastry.PMenu();
+      //   Bread.BMenu();
       // }
+      if( menuType == "P")
+      {
+        Pastry.PMenu();
+      }
       else
       {
         Environment.Exit(0);
       }
     }
     
-    public static void CheckOut(int bagPrice)
+    public static void CheckOut(int puffPrice)
     {
-      int outPut = bagPrice;
+      int outPut = puffPrice;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
