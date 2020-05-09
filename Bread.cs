@@ -47,7 +47,8 @@ Please select number 1 or 2 then hit ENTER:");
         
         int bagPrice = BagAdd(bagAmount);
         int breadTotal = BreadCheckout(bagPrice);
-        int breadOutput = Program.CheckOut(breadTotal);
+        // int breadOutput = Program.CheckOut(breadTotal);
+        Program.CheckOut(breadTotal);
       }
       else
       {

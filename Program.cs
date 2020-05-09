@@ -47,11 +47,10 @@ namespace Bakery.Program
         Environment.Exit(0);
       }
     }
-    Bread bread = new Bread();
-    int breadResult = bread.breadOutput;
-    public static void CheckOut(int breadResult)
+    
+    public static void CheckOut(int breadTotal)
     {
-      int outPut = breadTotal + pastryTotal;
+      int outPut = breadTotal;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
