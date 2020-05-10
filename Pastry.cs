@@ -52,16 +52,18 @@ Please select number 1 or 2 then hit ENTER:");
       }
     }  
     
-    private static int PuffAdd(int puffAmount)
+    private static int PuffAdd(int puffAmount) // this algorithm is wrong
     {
-      for ( int i = 2; i <= puffAmount; i++)
+      int puffPrice = puffAmount*2;
+      for ( int i = 0; i <= puffAmount; i++) // might need to use double/decimal
       {
         if(i % 6 == 0)
         {
-          i -= 1;
+          puffPrice -= 1;
         }
+      Console.WriteLine(puffPrice);
       }
-      return puffAmount;
+      return puffPrice;
     }                                                        
   }
 }
