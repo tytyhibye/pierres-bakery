@@ -60,12 +60,8 @@ Please select number 1 or 2 then hit ENTER:");
         {
           i -= 1;
         }
-        else
-        {
-        int puffPrice = i;
-        }
       }
-      return puffPrice;  // need to fix this loop with defined return
+      return puffAmount;
     }                                                        
   }
 }
