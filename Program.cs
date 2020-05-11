@@ -1,6 +1,7 @@
 using Bakery.BreadMenu;
 using Bakery.PastryMenu;
 using System;
+using System.Collections.Generic;
 
 namespace Bakery.ProgramMenu
 {
@@ -48,30 +49,43 @@ namespace Bakery.ProgramMenu
         Main();
       }
     }
-    
-    public static void CheckOut(int orderPrice)
+
+    public static List<int> returnList = new List<int>();
+
+    public static void CheckOut()
     {
-      int outPut = orderPrice;
+      // int outPut = orderPrice;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
-      if(check == "N")
+      if(check == "Y")
       {
-        StartMenu();
+        int outPut = 0;
+        for(int i = 0; i < returnList.Count; i ++)
+        {
+          outPut += returnList[i];
+          // Console.WriteLine(returnList[i]);
+          // Console.WriteLine(outPut);
+        }
+        Console.WriteLine("You're total today is $" + outPut);
+        Console.WriteLine(@"
+                  (
+                    )
+              __..---..__
+          ,-='  /  |  \  `=-.
+         :--..___________..--;
+          \.,_____________,./
+            Have a nice day!");
+      Environment.Exit(0);
       }
       else
       {
-      Console.WriteLine("You're total today is $" + outPut);
-      Console.WriteLine(@"
-                (
-                  )
-            __..---..__
-        ,-='  /  |  \  `=-.
-       :--..____________..--;
-        \.,_____________,./
-          Have a nice day!");
+        StartMenu();
       }
-      Environment.Exit(0);
     }
   }
 }
+
+// int carbholder = 0
+// for (i = 0; i>= list.length; i ++)
+// {carbholder += list[i]}

@@ -1,6 +1,7 @@
 using Bakery.PastryMenu;
 using Bakery.ProgramMenu;
 using System;
+using System.Collections.Generic;
 
 namespace Bakery.BreadMenu
 {
@@ -44,14 +45,16 @@ Please select number 1 or 2 then hit ENTER:");
         Console.WriteLine("How many Baguettes would you like?");
         int bagAmount = int.Parse(Console.ReadLine());
         int bagPrice = BagAdd(bagAmount);
-        Program.CheckOut(bagPrice);
+        Program.returnList.Add(bagPrice);
+        Program.CheckOut();
+
       }
       else if(item == "2")
       {
         Console.WriteLine("How many Croissants would you like?");
         int croiAmount = int.Parse(Console.ReadLine());
         int croiPrice = CroiAdd(croiAmount);
-        Program.CheckOut(croiPrice);
+        // Program.CheckOut(croiPrice);
       }
       else
       {

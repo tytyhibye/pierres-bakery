@@ -1,6 +1,7 @@
 using Bakery.BreadMenu;
 using Bakery.ProgramMenu;
 using System;
+using System.Collections.Generic;
 
 namespace Bakery.PastryMenu
 {
@@ -40,24 +41,27 @@ namespace Bakery.PastryMenu
 Please select number 1 or 2 then hit ENTER:");
       
       string item = (Console.ReadLine());
+      
       if(item == "1")
       {
         Console.WriteLine("How many Creampuffs would you like?");
         int puffAmount = int.Parse(Console.ReadLine());
         int puffPrice = PuffAdd(puffAmount);
-        Program.CheckOut(puffPrice);
+        Program.returnList.Add(puffPrice);
+        Program.CheckOut();
       }
       else if(item == "2")
       {
         Console.WriteLine("How many Cupcakes would you like?");
         int cakeAmount = int.Parse(Console.ReadLine());
         int cakePrice = CakeAdd(cakeAmount);
-        Program.CheckOut(cakePrice);
+        // Program.CheckOut(cakePrice);
       }
       else
       {
         Program.Main();
       }
+
     }  
     
     private static int PuffAdd(int puffAmount) 
