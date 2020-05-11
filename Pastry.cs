@@ -70,7 +70,6 @@ Please select number 1 or 2 then hit ENTER:");
           puffPrice -= 1;
         }
       }
-      // Console.WriteLine(puffPrice);
       return puffPrice;
     }   
 
@@ -84,7 +83,6 @@ Please select number 1 or 2 then hit ENTER:");
           cakePrice -= 1;
         }
       }
-      Console.WriteLine(cakePrice);
       return cakePrice;
     }                                                     
   }

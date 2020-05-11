@@ -63,14 +63,13 @@ Please select number 1 or 2 then hit ENTER:");
     {
       int discount = input / 3;
       int bagPrice = (input - discount)* 5;
-      // Console.WriteLine(bagPrice);
       return bagPrice;
     } 
+
     private static int CroiAdd(int input)
     {
       int discount = input / 3;
       int croiPrice = (input - discount)* 4;
-      // Console.WriteLine(croiPrice);
       return croiPrice;
     }                                                                          
   }
