@@ -7,7 +7,7 @@ namespace Bakery.ProgramMenu
   class Program
   {
     // StartMenu();
-    static void Main()
+    public static void Main()
     {
       Console.WriteLine(@"
                     WELCOME TO
@@ -45,7 +45,7 @@ namespace Bakery.ProgramMenu
       }
       else
       {
-        Environment.Exit(0);
+        Main();
       }
     }
     

@@ -48,7 +48,7 @@ Please select number 1 or 2 then hit ENTER:");
       }
       else
       {
-        Environment.Exit(0);
+        Program.Main();
       }
     }  
 
