@@ -1,4 +1,4 @@
-// using Bakery.BreadMenu;
+using Bakery.BreadMenu;
 using Bakery.ProgramMenu;
 using System;
 
@@ -38,8 +38,8 @@ namespace Bakery.PastryMenu
       
 Please select number 1 or 2 then hit ENTER:");
       
-      int item = int.Parse(Console.ReadLine());
-      if(item == 1)
+      string item = (Console.ReadLine());
+      if(item == "1")
       {
         Console.WriteLine("How many Creampuffs would you like?");
         int puffAmount = int.Parse(Console.ReadLine());
