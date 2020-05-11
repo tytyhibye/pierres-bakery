@@ -31,10 +31,11 @@ namespace Bakery.PastryMenu
     ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝
                                                   
         Today's Special:
-    Buy 1 for $2 or 3 for $5");
+    Creampuffs - $2 each or 3 for $5
+    Cupcakes - $3 each or 3 for $8");
     
       Console.WriteLine(@"
-      1. Creampuff($2)        2. Cupcake ($2)
+      1. Creampuff($2)        2. Cupcake ($3)
       
 Please select number 1 or 2 then hit ENTER:");
       
@@ -45,6 +46,13 @@ Please select number 1 or 2 then hit ENTER:");
         int puffAmount = int.Parse(Console.ReadLine());
         int puffPrice = PuffAdd(puffAmount);
         Program.CheckOut(puffPrice);
+      }
+      else if(item == "2")
+      {
+        Console.WriteLine("How many Cupcakes would you like?");
+        int cakeAmount = int.Parse(Console.ReadLine());
+        int cakePrice = CakeAdd(cakeAmount);
+        Program.CheckOut(cakePrice);
       }
       else
       {
@@ -62,8 +70,22 @@ Please select number 1 or 2 then hit ENTER:");
           puffPrice -= 1;
         }
       }
-      Console.WriteLine(puffPrice);
+      // Console.WriteLine(puffPrice);
       return puffPrice;
-    }                                                        
+    }   
+
+    private static int CakeAdd(int cakeAmount) 
+    {
+      int cakePrice = cakeAmount*3;
+      for ( int i = 1; i <= cakeAmount; i++)
+      {
+        if(i % 3 == 0)
+        {
+          cakePrice -= 1;
+        }
+      }
+      Console.WriteLine(cakePrice);
+      return cakePrice;
+    }                                                     
   }
 }
