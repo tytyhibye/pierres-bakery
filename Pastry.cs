@@ -55,7 +55,8 @@ Please select number 1 or 2 then hit ENTER:");
         Console.WriteLine("How many Cupcakes would you like?");
         int cakeAmount = int.Parse(Console.ReadLine());
         int cakePrice = CakeAdd(cakeAmount);
-        // Program.CheckOut(cakePrice);
+        Program.returnList.Add(cakePrice);
+        Program.CheckOut();
       }
       else
       {

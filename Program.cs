@@ -54,7 +54,6 @@ namespace Bakery.ProgramMenu
 
     public static void CheckOut()
     {
-      // int outPut = orderPrice;
       Console.WriteLine("Would you like to checkout? Y/N");
       string check = (Console.ReadLine().ToUpper());
       
@@ -64,8 +63,6 @@ namespace Bakery.ProgramMenu
         for(int i = 0; i < returnList.Count; i ++)
         {
           outPut += returnList[i];
-          // Console.WriteLine(returnList[i]);
-          // Console.WriteLine(outPut);
         }
         Console.WriteLine("You're total today is $" + outPut);
         Console.WriteLine(@"
@@ -85,7 +82,3 @@ namespace Bakery.ProgramMenu
     }
   }
 }
-
-// int carbholder = 0
-// for (i = 0; i>= list.length; i ++)
-// {carbholder += list[i]}
