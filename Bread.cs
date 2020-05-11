@@ -46,6 +46,13 @@ Please select number 1 or 2 then hit ENTER:");
         int bagPrice = BagAdd(bagAmount);
         Program.CheckOut(bagPrice);
       }
+      else if(item == "2")
+      {
+        Console.WriteLine("How many Croissants would you like?");
+        int croiAmount = int.Parse(Console.ReadLine());
+        int croiPrice = CroiAdd(croiAmount);
+        Program.CheckOut(croiPrice);
+      }
       else
       {
         Program.Main();
@@ -58,6 +65,13 @@ Please select number 1 or 2 then hit ENTER:");
       int bagPrice = (input - discount)* 5;
       // Console.WriteLine(bagPrice);
       return bagPrice;
-    }                                                         
+    } 
+    private static int CroiAdd(int input)
+    {
+      int discount = input / 3;
+      int croiPrice = (input - discount)* 4;
+      // Console.WriteLine(croiPrice);
+      return croiPrice;
+    }                                                                          
   }
 }
