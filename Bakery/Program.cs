@@ -64,7 +64,7 @@ namespace Bakery.ProgramMenu
         {
           outPut += returnList[i];
         }
-        Console.WriteLine("You're total today is $" + outPut);
+        Console.WriteLine("        You're total today is $" + outPut);
         Console.WriteLine(@"
                   (
                     )
